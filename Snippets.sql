@@ -9,6 +9,8 @@ INSERT INTO "tagsIndex" VALUES(7,4);
 INSERT INTO "tagsIndex" VALUES(8,4);
 INSERT INTO "tagsIndex" VALUES(4,3);
 INSERT INTO "tagsIndex" VALUES(5,3);
+INSERT INTO "tagsIndex" VALUES(9,5);
+INSERT INTO "tagsIndex" VALUES(10,5);
 CREATE TABLE snippets(sid INTEGER PRIMARY KEY, title TEXT, body TEXT, syntax VARCHAR(20), usageCount INTEGER, FOREIGN KEY(sid) REFERENCES tagsIndex(sid) ON DELETE CASCADE ON UPDATE CASCADE);
 INSERT INTO "snippets" VALUES(1,'Empty Branch','git checkout --orphan __branchname__
 git rm --cached -r .
@@ -23,6 +25,11 @@ INSERT INTO "snippets" VALUES(4,'svg-color','svg
   *
     fill: #333333
       ','Standard',0);
+INSERT INTO "snippets" VALUES(5,'bootstrap-breakpoints','$bootstrap-iphone: 340px;
+$bootstrap-xs-max: 420px;
+$bootstrap-sm-max: 500px
+$bootstrap-md-max: 768px;
+$boostrap-lg-max: 1200px;','CSS',0);
 CREATE TABLE tags(tid INTEGER PRIMARY KEY, tag TEXT UNIQUE, FOREIGN KEY(tid) REFERENCES tagsIndex(tid) ON DELETE CASCADE ON UPDATE CASCADE);
 INSERT INTO "tags" VALUES(1,'jquery');
 INSERT INTO "tags" VALUES(2,'cdn');
@@ -32,5 +39,7 @@ INSERT INTO "tags" VALUES(5,'cwd');
 INSERT INTO "tags" VALUES(6,'sass');
 INSERT INTO "tags" VALUES(7,'css');
 INSERT INTO "tags" VALUES(8,'svg');
+INSERT INTO "tags" VALUES(9,'bootstrap');
+INSERT INTO "tags" VALUES(10,'scss');
 CREATE TABLE smartTags(stid INTEGER PRIMARY KEY, name TEXT, query TEXT);
 COMMIT;
