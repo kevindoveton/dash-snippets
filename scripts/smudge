@@ -1,2 +1,4 @@
 #! /bin/bash
-cat $! | sqlite3
+
+rm Snippets.dash
+cat Snippets.sql | sqlite3 Snippets.dash

@@ -1,2 +1,14 @@
 #! /bin/bash
-sqlite3 $1 .dump > dash.sql
+
+sqlite3 Snippets.dash .dump > Snippets.sql
+cp Snippets.dash Snippets.dash.bak
+
+# if [ -t 0 ]
+# then
+#     echo nopipe > test.txt
+#     data=$1
+# else
+#     echo pipe > test.txt
+#     data=$(cat) > tmp.sql
+# fi
+# 
