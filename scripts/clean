@@ -1,2 +1,2 @@
 #! /bin/bash
-sqlite3 $1 .dump
+sqlite3 $1 .dump > dash.sql
