@@ -1,0 +1,3 @@
+[filter "db-to-sql"]
+  clean = ./scripts/clean
+  smudge = ./scripts/smudge
